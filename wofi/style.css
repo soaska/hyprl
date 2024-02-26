@@ -1,5 +1,5 @@
 /* 
- * Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+ * Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 */
 
 /** ********** Colors ********** **/
@@ -27,7 +27,7 @@
 	background-color: @background;
 	color: @foreground;
 	border: 0px solid @background-alt1;
-	border-radius: 10px;
+	border-radius: 0px;
 }
 
 #outer-box {
@@ -36,7 +36,7 @@
 
 #input {
 	background-color: @background-alt1;
-	border: 10px solid @background-alt2;
+	border: 0px solid @background-alt2;
 	padding: 4px 12px;
 }
 
@@ -75,5 +75,5 @@
 }
 
 #input, #entry:selected {
-	border-radius: 10px;
+	border-radius: 12px;
 }

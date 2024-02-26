@@ -1,5 +1,5 @@
 /* 
- * Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+ * Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 */
 
 /** ********** Import Colors ********** **/
@@ -22,7 +22,7 @@ button {
 	background-color: @background-alt1;
     color: @foreground;
 	border: 1px solid @background-alt2;
-	border-radius: 10px;
+	border-radius: 50px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 30%;

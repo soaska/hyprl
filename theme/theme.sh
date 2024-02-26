@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 ##
 ## Script To Apply Themes
 
@@ -33,7 +33,7 @@ source_default() {
 	altbackground="`pastel color $background | pastel lighten 0.10 | pastel format hex`"
 	altforeground="`pastel color $foreground | pastel darken 0.30 | pastel format hex`"
 	modbackground=(`pastel gradient -n 3 $background $altbackground | pastel format hex`)
-	accent="$color5"
+	accent="$color4"
 	notify-send -h string:x-canonical-private-synchronous:sys-notify-dtheme -u normal -i ${PATH_MAKO}/icons/palette.png "Applying Default Theme..."
 }
 
@@ -91,35 +91,31 @@ apply_wallpaper() {
 ## Alacritty ---------------------------------
 apply_alacritty() {
 	# alacritty : colors
-	cat > ${PATH_ALAC}/colors.yml <<- _EOF_
+	cat > ${PATH_ALAC}/colors.toml <<- _EOF_
 		## Colors configuration
-		colors:
-		  # Default colors
-		  primary:
-		    background: '${background}'
-		    foreground: '${foreground}'
-
-		  # Normal colors
-		  normal:
-		    black:   '${color0}'
-		    red:     '${color1}'
-		    green:   '${color2}'
-		    yellow:  '${color3}'
-		    blue:    '${color4}'
-		    magenta: '${color5}'
-		    cyan:    '${color6}'
-		    white:   '${color7}'
-
-		  # Bright colors
-		  bright:
-		    black:   '${color8}'
-		    red:     '${color9}'
-		    green:   '${color10}'
-		    yellow:  '${color11}'
-		    blue:    '${color12}'
-		    magenta: '${color13}'
-		    cyan:    '${color14}'
-		    white:   '${color15}'
+		[colors.primary]
+		background = "${background}"
+		foreground = "${foreground}"
+		
+		[colors.normal]
+		black   = "${color0}"
+		red     = "${color1}"
+		green   = "${color2}"
+		yellow  = "${color3}"
+		blue    = "${color4}"
+		magenta = "${color5}"
+		cyan    = "${color6}"
+		white   = "${color7}"
+		
+		[colors.bright]
+		black   = "${color8}"
+		red     = "${color9}"
+		green   = "${color10}"
+		yellow  = "${color11}"
+		blue    = "${color12}"
+		magenta = "${color13}"
+		cyan    = "${color14}"
+		white   = "${color15}"
 	_EOF_
 }
 
@@ -269,8 +265,11 @@ apply_hypr() {
 		-e "s/\$active_border_col_2 =.*/\$active_border_col_2 = 0xFF${color1:1}/g" \
 		-e "s/\$inactive_border_col_1 =.*/\$inactive_border_col_1 = 0xFF${modbackground[1]:1}/g" \
 		-e "s/\$inactive_border_col_2 =.*/\$inactive_border_col_2 = 0xFF${modbackground[2]:1}/g" \
-		-e "s/\$group_border_col =.*/\$group_border_col = 0xFF${color1:1}/g" \
-		-e "s/\$group_border_active_col =.*/\$group_border_active_col = 0xFF${color2:1}/g"
+		-e "s/\$group_border_active_col =.*/\$group_border_active_col = 0xFF${color2:1}/g" \
+		-e "s/\$group_border_inactive_col =.*/\$group_border_inactive_col = 0xFF${color3:1}/g" \
+		-e "s/\$group_border_locked_active_col =.*/\$group_border_locked_active_col = 0xFF${color1:1}/g" \
+		-e "s/\$group_border_locked_inactive_col =.*/\$group_border_locked_inactive_col = 0xFF${color4:1}/g" \
+		-e "s/\$groupbar_text_color =.*/\$groupbar_text_color = 0xFF${foreground:1}/g"
 }
 
 ## Source Theme Accordingly -----------------
