@@ -11,7 +11,7 @@
     font-size: 14px;
 }
 
-/** ********** Waybar Window ********** 
+/** ********** Waybar Window **********
 window#waybar {
     background-color: @background;
 	color: @foreground;
@@ -20,6 +20,7 @@ window#waybar {
     transition-duration: .5s;
 }
 */
+
 window#waybar {
     background: @bar-bg;
 }
@@ -56,8 +57,8 @@ window#waybar.hidden {
 	background-color: @background-alt1;
 	color: @magenta;
 	font-size: 18px;
-	border-radius: 0px 14px 0px 0px;
-	margin: 0px 0px 0px 0px;
+	border-radius: 10px;
+	margin: 6px 6px 6px 6px;
 	padding: 2px 8px 2px 8px;
 }
 
@@ -84,7 +85,7 @@ window#waybar.hidden {
 	background-color: @green;
 	color: @background;
 	border-radius: 10px;
-	margin: 6px 0px 6px 6px ;
+	margin: 6px;
 	padding: 4px 6px;
 }
 #idle_inhibitor.deactivated {
@@ -95,7 +96,7 @@ window#waybar.hidden {
 #tray {
 	background-color: @background-alt1;
 	border-radius: 10px;
-	margin: 6px 0px 6px 6px ;
+	margin: 6px 6px 6px 6px ;
 	padding: 4px 6px;
 }
 #tray > .passive {
@@ -294,8 +295,7 @@ window#waybar.hidden {
 #workspaces {
 	background-color: @background;
 	border-radius: 10px;
-	margin-left: 6px ;
-	margin-bottom: 2px ;
+	margin: 6px ;
 	padding: 0px;
 }
 #workspaces button{

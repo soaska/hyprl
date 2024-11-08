@@ -4,6 +4,6 @@
 ##
 ## Set Wallpaper in Hyprland
 
-WALLPAPER='/home/sosiska/Изображения/wallpapers/windows-11-dark-mode-abstract-background-black-background-3840x2400-8710.jpg'
+WALLPAPER='/home/soaska/wallpapers/wallpaper.jpg'
 
 swaybg --output '*' --mode fill --image "$WALLPAPER"
